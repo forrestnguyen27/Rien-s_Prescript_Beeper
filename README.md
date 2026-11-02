@@ -2,6 +2,12 @@
 
 ESP-IDF firmware for an ESP32, 128x64 SSD1306 OLED, TTP223 touch sensors, and passive buzzer. The firmware uses FreeRTOS tasks and queues for touch input, UI/timing, and prompt requests.
 
+## Beeper enclosure
+
+![Prescript Beeper enclosure](docs/Beeper.jpg)
+
+The `docs/3D models/` folder contains the enclosure STL files: [Beeper Body](docs/3D%20models/Beeper%20Body.stl) and [Beeper Bottom](docs/3D%20models/Beeper%20Bottom.stl). The 64x64 OLED logo source is [docs/index-logo.png](docs/index-logo.png).
+
 ## Behavior
 
 - On boot, a centered monochrome logo appears.
@@ -50,5 +56,5 @@ Replace `PORT` with the board's serial port. For a different ESP32 variant, sele
 ## Driver modules
 
 - `driver/ssd1306.c` implements the 128x64 OLED and text rendering. `driver/index_logo_64.h` contains the monochrome bitmap generated from `docs/index-logo.png`.
-- `driver/touch_buttons.c` polls and debounces both TTP223 inputs.
+- `driver/touch_input.c` polls and debounces both TTP223 inputs.
 - `driver/buzzer.c` controls the passive buzzer with LEDC tones.
