@@ -1,0 +1,25 @@
+menu "Prescript Beeper"
+
+config PRESCRIPT_WIFI_SSID
+    string "Wi-Fi SSID"
+    default ""
+    help
+        Wi-Fi network name. Leave empty to use the built-in prompts only.
+
+config PRESCRIPT_WIFI_PASSWORD
+    string "Wi-Fi password"
+    default ""
+    help
+        Password for the configured Wi-Fi network.
+
+config PRESCRIPT_DEEPSEEK_API_KEY
+    string "DeepSeek API key"
+    default ""
+    help
+        API key sent to api.deepseek.com. Keep sdkconfig private.
+
+config PRESCRIPT_DEEPSEEK_MODEL
+    string "DeepSeek model"
+    default "deepseek-flash"
+
+endmenu
